@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #display {
+            display: none;
+        }
+
+
+         body div {
+             float: left;
+             position: relative;
+             overflow: hidden;
+             width: 122px;
+             height: 172px;
+        }
+
+        /*以下是定义div*/
+
+        .tuA {
+            display: left;
+            position: absolute;
+            top: 0px;
+        }
+
+        .tuB {
+            display: left;
+            position: absolute;
+            top: 172px;
+        }
+
+
+
+    </style>
+
+    <script src="doMove.js"></script>
+    <script src="getstyle.js"></script>
+    <script>
+
+        window.onload = function() {
+
+            var str = '';
+            var oldstr='';
+
+            timer = setInterval( function fn() {
+                var myTime = new Date();
+                // 以上数字类型是对象
+                var iHou = myTime.getHours();
+                var iMin = myTime.getMinutes();
+                var iSec = myTime.getSeconds();
+                var oP = document.getElementById('time');
+
+
+
+
+
+                //以上 数字类型都是数字
+
+
+               function jiage0(obj){
+                   if(obj<10){
+                         return '0'+obj;
+
+                   }else {
+                        return ''+ obj;
+                   }
+
+               };
+
+
+                oldstr = str;//找到变动点
+                str = jiage0(iHou) +jiage0(iMin) + jiage0(iSec);
+
+               oP.innerHTML = str;
+               for(var i=0;i<str.length;i++) {
+                   if (str.charAt(i)!=oldstr.charAt(i)){//若果那里不相等,那么那个地方,就是触发器所在的位置,弹射安装
+                       ;
+
+                   }
+               }
+
+
+            },50);
+
+
+
+
+
+
+
+        };
+
+
+
+    </script>
+</head>
+<body>
+
+<p id="time" style="font-size: 26px;"></p>
+
+
+    <div  class="shijian">
+        <img  class="tuA" src="img/0.JPG"/>
+        <img CLASS="tuB" src="img/0.JPG">
+    </div>
+
+
+    <div class="shijian">
+        <img  class="tuA" src="img/1.JPG"/>
+        <img CLASS="tuB" src="img/1.JPG"/>
+    </div >
+
+
+<div >
+    <img src="img/colon.JPG"/>
+</div>
+
+
+
+
+    <div class="shijian">
+        <img  class="tuA" src="img/2.JPG"/>
+        <img CLASS="tuB" src="img/1.JPG"/>
+    </div>
+
+
+    <div class="shijian">
+        <img  class="tuA" src="img/0.JPG">
+        <img CLASS="tuB" src="img/3.JPG"/>
+    </div>
+
+
+
+<div >
+    <img src="img/colon.JPG"/>
+</div>
+
+
+
+    <div class="shijian">
+        <img class="tuA" src="img/0.JPG">
+        <img CLASS="tuB" src="img/4.JPG"/>
+    </div>
+
+    <div class="shijian">
+
+        <img   class="tuA" src="img/5.JPG"/>
+        <img CLASS="tuB" src="img/0.JPG">
+    </div>
+
+
+
+</body>
+</html>
